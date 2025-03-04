@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:let_chat/common/models/index.dart';
+import 'package:let_chat/common/services/index.dart';
 import 'package:let_chat/common/utils/tools.dart';
 import 'package:let_chat/common/values/index.dart';
 import 'package:tencent_cloud_chat_sdk/enum/V2TimAdvancedMsgListener.dart';
@@ -400,7 +401,7 @@ class IMManager {
     final v2ChatUserList = <V2TimGroupMember>[];
     v2ChatUserList.add(V2TimGroupMember(
       role: GroupMemberRoleTypeEnum.V2TIM_GROUP_MEMBER_ROLE_OWNER,
-      userID: UserService.to.profile.username!,
+      userID: UserService.to.username,
     ));
     for (var element in memberList) {
       if ((element.username ?? '').isEmpty) continue;
